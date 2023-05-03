@@ -26,7 +26,7 @@ public class Game {
 	private Long id;
 	private String name;
 	private String platform;
-	private Integer stars;
+	private String stars;
 	@Enumerated(EnumType.STRING)
 	private Gender gender;
 	

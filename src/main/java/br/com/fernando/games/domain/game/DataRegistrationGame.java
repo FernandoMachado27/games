@@ -9,9 +9,9 @@ public record DataRegistrationGame(
 		String name,
 		@NotBlank(message = "Platform is required")
 		String platform,
-		@NotNull(message = "Number of stars is required")
-		@Pattern(regexp = "\\d{5}", message = "Invalid format")
-		Integer stars,
+		@NotBlank(message = "Number of stars is required")
+		@Pattern(regexp = "\\d{1}", message = "Invalid format")
+		String stars,
 		@NotNull(message = "Gender is required")
 		Gender gender) {
 
