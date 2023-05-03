@@ -1,4 +1,5 @@
 create table games(
+
 	id bigint not null auto_increment,
     name varchar(100) not null,
     platform varchar(100) not null,
@@ -6,4 +7,5 @@ create table games(
     gender varchar(100) not null,
     
     primary key(id)
-)
+    
+);
