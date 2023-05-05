@@ -38,8 +38,8 @@ public class GameController {
 	}
 	
 	@GetMapping
-	public ResponseEntity<List<Game>> list(){
-		List<Game> games = gamesRepository.findAll();
+	public ResponseEntity<List<DataDetailsGame>> list(){
+		var games = gamesRepository.findAll().stream().map(DataDetailsGame::new).toList();
 		
 		return ResponseEntity.ok(games);
 	}
