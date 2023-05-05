@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -26,6 +27,7 @@ public class GameController {
 	@Autowired
 	private GameRepository gamesRepository;
 	
+	@CrossOrigin(origins = "*", allowedHeaders = "*") // todas as origens e todos os Headers
 	@PostMapping
 	@Transactional
 	public ResponseEntity register(@RequestBody @Valid DataRegistrationGame dataRegistrationGame, UriComponentsBuilder uriBuilder){
@@ -37,6 +39,7 @@ public class GameController {
 		return ResponseEntity.created(uri).body(new DataDetailsGame(game));
 	}
 	
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@GetMapping
 	public ResponseEntity<List<DataDetailsGame>> list(){
 		var games = gamesRepository.findAll().stream().map(DataDetailsGame::new).toList();
@@ -44,6 +47,7 @@ public class GameController {
 		return ResponseEntity.ok(games);
 	}
 	
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@DeleteMapping("/{id}")
 	@Transactional
 	public ResponseEntity delete(@PathVariable Long id) {
