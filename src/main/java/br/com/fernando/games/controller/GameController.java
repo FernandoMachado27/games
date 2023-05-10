@@ -35,7 +35,7 @@ public class GameController {
 		var game = new Game(dataRegistrationGame);
 		gamesRepository.save(game);
 		
-		var uri = uriBuilder.path("/medico/{id}").buildAndExpand(game.getId()).toUri();
+		var uri = uriBuilder.path("/games/{id}").buildAndExpand(game.getId()).toUri();
 		
 		return ResponseEntity.created(uri).body(new DataDetailsGame(game));
 	}
