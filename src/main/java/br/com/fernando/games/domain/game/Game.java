@@ -1,6 +1,5 @@
 package br.com.fernando.games.domain.game;
 
-import br.com.fernando.games.controller.DataUpdateGame;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;

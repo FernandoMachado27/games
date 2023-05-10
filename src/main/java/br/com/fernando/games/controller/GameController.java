@@ -16,7 +16,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import br.com.fernando.games.domain.game.DataDetailsGame;
 import br.com.fernando.games.domain.game.DataRegistrationGame;
+import br.com.fernando.games.domain.game.DataUpdateGame;
 import br.com.fernando.games.domain.game.Game;
 import br.com.fernando.games.domain.game.GameRepository;
 import jakarta.validation.Valid;
