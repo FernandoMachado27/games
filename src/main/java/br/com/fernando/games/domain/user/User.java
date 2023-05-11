@@ -1,4 +1,4 @@
-package br.com.fernando.games.domain.usuario;
+package br.com.fernando.games.domain.user;
 
 import java.util.Collection;
 import java.util.List;
