@@ -42,12 +42,14 @@ public class TokenService {
 					.verify(tokenJWT)
 					.getSubject();
 		} catch (JWTVerificationException exception) {
-			throw new RuntimeException("Token JWT inválido ou expirado");
+		    System.out.println("TOKEN: " +tokenJWT);
+		    exception.printStackTrace();
+		    throw new RuntimeException("Token JWT inválido ou expirado");
 		}
 	}
 	
 	private Instant dateExpiration() {
-		return LocalDateTime.now().plusHours(6).toInstant(ZoneOffset.of("-03:00"));
+		return LocalDateTime.now().plusHours(2).toInstant(ZoneOffset.of("-03:00"));
 	}
 
 }
