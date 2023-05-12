@@ -1,6 +1,5 @@
-package br.com.fernando.games.controller;
+package br.com.fernando.games.domain.game;
 
-import br.com.fernando.games.domain.game.Gender;
 import jakarta.validation.constraints.NotNull;
 
 public record DataUpdateGame(

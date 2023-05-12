@@ -16,7 +16,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import br.com.fernando.games.domain.game.DataDetailsGame;
 import br.com.fernando.games.domain.game.DataRegistrationGame;
+import br.com.fernando.games.domain.game.DataUpdateGame;
 import br.com.fernando.games.domain.game.Game;
 import br.com.fernando.games.domain.game.GameRepository;
 import jakarta.validation.Valid;
@@ -35,7 +37,7 @@ public class GameController {
 		var game = new Game(dataRegistrationGame);
 		gamesRepository.save(game);
 		
-		var uri = uriBuilder.path("/medico/{id}").buildAndExpand(game.getId()).toUri();
+		var uri = uriBuilder.path("/games/{id}").buildAndExpand(game.getId()).toUri();
 		
 		return ResponseEntity.created(uri).body(new DataDetailsGame(game));
 	}
